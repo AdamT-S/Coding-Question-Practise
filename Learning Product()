@@ -1,0 +1,14 @@
+from itertools import product
+A = list(input().split())
+for i in range(0, len(A)):
+    A[i] = int(A[i])
+    
+B = list(input().split())
+for i in range(0, len(B)):
+    B[i] = int(B[i])
+
+C = tuple(product(A, B))
+out = ""
+for i in range(0, len(C)):
+    out += str(C[i]) + " "
+print(out.strip())
