@@ -1,0 +1,27 @@
+def merge_the_tools(string, k):
+    # your code goes here
+    n = len(string)
+    
+    divisions = int(n/k)
+    
+    division_list = []
+    i = 0
+    temp_string = ''
+    
+    while i < len(string):
+        if i % k == k-1:
+            if string[i] not in temp_string:
+                temp_string = temp_string+string[i]
+                division_list.append(temp_string)
+                temp_string = ''
+            else:
+                division_list.append(temp_string)
+                temp_string = ''
+        else:
+            if string[i] not in temp_string:
+                temp_string = temp_string+string[i]
+        i += 1
+            
+    
+    for i in range(0, len(division_list)):
+        print(division_list[i])
